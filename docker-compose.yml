@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  postgres:
+    image: postgres:13
+    container_name: postgres_catoff_db
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: catoff
+      POSTGRES_USER: catoff_user
+      POSTGRES_PASSWORD: catoff_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
